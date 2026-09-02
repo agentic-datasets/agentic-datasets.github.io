@@ -33,6 +33,12 @@ export default function App() {
             {p}
           </p>
         ))}
+        <p className="mt-6 leading-relaxed" style={muted}>
+          The three verdicts are the whole of it. They are also{' '}
+          <a href={ORG.showcase}>demonstrated in the browser</a>, running the normative conformance
+          vectors client-side &mdash; including the mutant hunt, where the implementation is broken
+          on purpose and the assertion named for the defect is the one that catches it.
+        </p>
         <dl className="mt-8 space-y-3 border-t pt-6 text-sm" style={rule}>
           {DEFINITION.verdicts.map((v) => (
             <div key={v.term} className="sm:flex sm:gap-4">

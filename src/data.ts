@@ -10,6 +10,7 @@ export const ORG = {
     'A behavioural contract for governed agentic datasets: 15 assertions, language-neutral vectors, checked without implementation access.',
   github: 'https://github.com/agentic-datasets',
   docs: 'https://agentic-datasets.github.io/reference/',
+  showcase: 'https://agentic-datasets.github.io/showcase/',
   maintainer: 'Alexander Chernov',
   orcid: 'https://orcid.org/0009-0007-3198-2712',
   orcidLabel: '0009-0007-3198-2712',
@@ -43,6 +44,13 @@ export const REPOSITORIES = [
     summary:
       'What agentic datasets are, and where the licensing boundary sits. Prose only.',
     note: 'No code.',
+  },
+  {
+    name: 'showcase',
+    href: 'https://github.com/agentic-datasets/showcase',
+    summary:
+      'Five demonstrations of the contract, running the normative vectors client-side against a TypeScript subject that reproduces the Python baseline.',
+    note: 'Runs in the browser.',
   },
   {
     name: '.github',

@@ -17,6 +17,7 @@ export default function Hero() {
         {ORG.tagline}
       </p>
       <nav className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+        <a href={ORG.showcase}>Showcases</a>
         <a href={ORG.docs}>Reference documentation</a>
         <a href={ORG.github}>Repositories on GitHub</a>
         <a href="#status">Status</a>
