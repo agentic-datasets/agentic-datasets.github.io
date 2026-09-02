@@ -145,7 +145,9 @@ export default function App() {
             {p}
           </p>
         ))}
-        <p className="mt-6 text-lg font-medium leading-relaxed">{STATUS.permission}</p>
+        <p className="mt-4 leading-relaxed" style={muted}>
+          {STATUS.permission}
+        </p>
         <p className="mt-8 border-t pt-6 text-sm" style={{ ...rule, ...muted }}>
           Maintainer: {ORG.maintainer} · ORCID{' '}
           <a href={ORG.orcid}>{ORG.orcidLabel}</a>
@@ -166,8 +168,7 @@ export default function App() {
                 Site and all original code{' '}
                 <strong style={{ color: 'var(--ink-muted)' }}>&copy; 2026 {ORG.maintainer}</strong>.
                 The text of this site is licensed CC BY 4.0; the mark is covered by neither and is
-                all rights reserved &mdash; see the <a href={MARK.href}>brand notes</a>. Implementing
-                the contract itself requires no permission and no licence from anybody.
+                all rights reserved &mdash; see the <a href={MARK.href}>brand notes</a>.
               </>
             }
           />

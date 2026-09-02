@@ -120,5 +120,8 @@ export const STATUS = {
     'Agentic Datasets is an independent technical project initiated and maintained by Alexander Chernov.',
     'The reference implementation is a release candidate: nothing is archived or minted yet, so a finding can still change the artifact rather than becoming errata against a published record.',
   ],
-  permission: 'Implementing the contract requires no permission and no licence from anybody.',
+  // Stated as a consequence of the licence choices rather than as a
+  // declaration, and rendered as body text rather than as a standalone line:
+  // it is a fact about the licences, and reads as a slogan when it is set apart.
+  permission: 'The licences are chosen so that an implementation needs no permission.',
 } as const
