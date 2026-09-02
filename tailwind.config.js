@@ -12,7 +12,7 @@ export default {
         rule:   '#e2e2de',
       },
       fontFamily: {
-        sans: ['Charter', 'Georgia', 'Cambria', 'ui-serif', 'serif'],
+        sans: ['"Roboto Slab"', 'Charter', 'Georgia', 'ui-serif', 'serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       maxWidth: { prose: '46rem' },
