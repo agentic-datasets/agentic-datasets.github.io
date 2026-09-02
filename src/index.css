@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* One ink, one ground, one rule. The dark values are the same three roles
+   swapped, so the mark — which paints itself with currentColor — inverts
+   without a second asset, exactly as the brand notes intend. */
+:root {
+  color-scheme: light dark;
+  --ink: #111111;
+  --ink-muted: #5b5b5b;
+  --ink-faint: #8a8a8a;
+  --ground: #ffffff;
+  --ground-alt: #f6f6f4;
+  --rule: #e2e2de;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #eceae5;
+    --ink-muted: #a5a29b;
+    --ink-faint: #7d7a74;
+    --ground: #111110;
+    --ground-alt: #191917;
+    --rule: #2e2e2b;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-feature-settings: 'kern' 1;
+    text-rendering: optimizeLegibility;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--ink-faint);
+  }
+  a:hover {
+    text-decoration-color: var(--ink);
+  }
+  ::selection {
+    background: var(--ink);
+    color: var(--ground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
