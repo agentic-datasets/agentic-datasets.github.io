@@ -1,6 +1,7 @@
 import Hero from './components/Hero'
 import Section from './components/Section'
 import Mark from './components/Mark'
+import Disclaimer from './components/Disclaimer'
 import {
   ORG,
   DEFINITION,
@@ -151,12 +152,19 @@ export default function App() {
           style={faint}
         >
           <p>
-            © 2026 {ORG.maintainer}. The text of this site is licensed CC BY 4.0. The mark is
-            not — see the <a href={MARK.href}>brand notes</a>.
-          </p>
-          <p className="mt-3">
             <a href={ORG.github}>github.com/agentic-datasets</a>
           </p>
+          <Disclaimer
+            ownership={
+              <>
+                Site and all original code{' '}
+                <strong style={{ color: 'var(--ink-muted)' }}>&copy; 2026 {ORG.maintainer}</strong>.
+                The text of this site is licensed CC BY 4.0; the mark is covered by neither and is
+                all rights reserved &mdash; see the <a href={MARK.href}>brand notes</a>. Implementing
+                the contract itself requires no permission and no licence from anybody.
+              </>
+            }
+          />
         </div>
       </footer>
     </div>
