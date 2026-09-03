@@ -9,8 +9,8 @@ export const ORG = {
   tagline:
     'A behavioural contract for governed agentic datasets: 15 assertions, language-neutral vectors, checked without implementation access.',
   github: 'https://github.com/agentic-datasets',
-  docs: 'https://agentic-datasets.github.io/reference/',
-  showcase: 'https://agentic-datasets.github.io/showcase/',
+  docs: '/reference/',
+  showcase: '/showcase/',
   maintainer: 'Alexander Chernov',
   orcid: 'https://orcid.org/0009-0007-3198-2712',
   orcidLabel: '0009-0007-3198-2712',
