@@ -23,7 +23,6 @@ export default function Hero() {
             {n.label}
           </a>
         ))}
-        <a href="#status">Status</a>
       </nav>
     </header>
   )
