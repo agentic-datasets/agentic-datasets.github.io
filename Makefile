@@ -32,7 +32,17 @@ clean: ## Remove dependencies and build output
 EDGE        ?= root@172.105.24.72
 REMOTE_ROOT ?= /var/www/agenticdatasets
 RSYNC_FLAGS := -az --delete --chmod=D755,F644 --exclude .git --exclude .keep
-RSYNC_FLAGS += --exclude /showcase --exclude /reference   # other repos own these
+#
+# --delete is scoped to what THIS repo owns. Every subtree below is published
+# from a different repository into the same document root, so an unexcluded
+# one is deleted by the next deploy of this site -- silently, and with no
+# error, because rsync is doing exactly what it was told. `vision/` was
+# missing here and a deploy would have removed it in full.
+#
+# Adding a subtree to the root means adding it here in the same change.
+RSYNC_FLAGS += --exclude /showcase     # agentic-datasets/showcase
+RSYNC_FLAGS += --exclude /reference    # agentic-datasets/reference
+RSYNC_FLAGS += --exclude /vision       # the Agentic Vision site
 
 .PHONY: deploy deploy-dry
 
