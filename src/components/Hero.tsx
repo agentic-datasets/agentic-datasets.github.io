@@ -1,6 +1,6 @@
 import Mark from './Mark'
 import ThemeToggle from './ThemeToggle'
-import { ORG } from '../data'
+import { ORG, NAV } from '../data'
 
 export default function Hero() {
   return (
@@ -13,13 +13,16 @@ export default function Hero() {
         <ThemeToggle />
       </div>
       <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">{ORG.name}</h1>
-      <p className="mt-5 text-lg leading-relaxed" style={{ color: 'var(--ink-muted)' }}>
-        {ORG.tagline}
+      <p className="mt-5 text-lg font-medium leading-relaxed">{ORG.tagline}</p>
+      <p className="mt-4 text-sm leading-relaxed" style={{ color: 'var(--ink-faint)' }}>
+        {ORG.subline}
       </p>
       <nav className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-        <a href={ORG.showcase}>Showcases</a>
-        <a href={ORG.docs}>Reference documentation</a>
-        <a href={ORG.github}>Repositories on GitHub</a>
+        {NAV.map((n) => (
+          <a key={n.href} href={n.href}>
+            {n.label}
+          </a>
+        ))}
         <a href="#status">Status</a>
       </nav>
     </header>
