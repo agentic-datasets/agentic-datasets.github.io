@@ -1,26 +1,21 @@
+import { LEGAL } from '../data'
+
 /**
- * The warranty notice, in the same terms this author's other public sites
- * carry it.
+ * The footer notice: a summary, and a link to the terms that govern.
  *
- * Deliberately smaller and dimmer than the licensing line above it: it has to
- * be present and readable, and it is not what anyone came here to read. The
- * substantive "what is not claimed" statements are sections of the page, not
- * footer text -- those are research claims and belong where they can be read.
- * This is the legal one.
+ * It used to carry the full warranty and liability language inline, which made
+ * the longest and most forceful paragraph on the page the list of reasons not
+ * to rely on the project. The substance is unchanged and now lives at
+ * /legal.html; only its position on this page changed.
+ *
+ * The "what is not claimed" statements are research claims and belong in the
+ * body of the page where they can be read. This is the legal one.
  */
 export default function Disclaimer({ ownership }: { ownership: React.ReactNode }) {
   return (
     <div className="mt-6 border-t pt-6" style={{ borderColor: 'var(--rule)' }}>
       <p className="text-xs leading-relaxed" style={{ color: 'var(--ink-faint)' }}>
-        Provided <strong style={{ color: 'var(--ink-muted)' }}>as is</strong>, for demonstration and
-        research only. No warranty of any kind, express or implied, including without limitation any
-        warranty of merchantability, fitness for a particular purpose, accuracy, availability or
-        non-infringement. No claim is made that it is complete, correct, reliable or continuously
-        available, and it may change or be withdrawn without notice. It is a personal project,
-        unaffiliated with the author&rsquo;s employer, and nothing here represents anyone&rsquo;s
-        views but the author&rsquo;s. Use is entirely at your own risk, and to the fullest extent
-        permitted by law the author accepts no liability or responsibility for any loss or damage
-        whatsoever arising from its use.
+        {LEGAL.summary} <a href="/legal.html">Full terms</a>.
       </p>
       <p className="mt-4 text-xs leading-relaxed" style={{ color: 'var(--ink-faint)' }}>
         {ownership}

@@ -19,6 +19,7 @@ preview: build ## Serve the built output locally
 check: ## Verify the built payload looks like a site
 	@test -f docs/index.html || { echo "refusing: no docs/index.html — nothing built"; exit 1; }
 	@test -f docs/.nojekyll || { echo "refusing: no docs/.nojekyll — Pages would run Jekyll"; exit 1; }
+	@test -f docs/legal.html || { echo "refusing: no docs/legal.html — the footer links terms that would 404"; exit 1; }
 	@echo "docs/ looks publishable"
 
 clean: ## Remove dependencies and build output

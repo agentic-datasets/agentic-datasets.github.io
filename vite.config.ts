@@ -12,6 +12,12 @@ export default defineConfig({
     outDir: 'docs',
     emptyOutDir: true,
     rollupOptions: {
+      // Two entries, one bundle of shared code: the terms page is built by the
+      // same pipeline as the homepage so it cannot drift from it stylistically.
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        legal: path.resolve(__dirname, 'legal.html'),
+      },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',

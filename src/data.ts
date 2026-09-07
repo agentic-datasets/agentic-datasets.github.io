@@ -46,7 +46,7 @@ export const DEFINITION = {
   ],
   close: [
     'Each outcome is attributable to the descriptor evidence that produced it.',
-    'The result is a dataset interface designed not only to provide data, but to participate in governed agentic execution.',
+    'The result is a dataset interface that participates directly in governed agentic execution.',
   ],
 } as const
 
@@ -67,7 +67,7 @@ export const MEASURED = {
     { figure: '8', label: 'Measured combinations across four agent runtimes and two dataset boundaries', claim: 5 },
     { figure: '15 / 15', label: 'Assertions passed by a code-independent implementation', claim: 6 },
     { figure: '17 / 17', label: 'Targeted behavioral defects detected by their corresponding assertions', claim: 7 },
-    { figure: '0', label: 'Prohibited executions across the measured conformance matrix', claim: 11 },
+    { figure: '0', label: 'Policy-prohibited actions executed across the measured conformance matrix', claim: 11 },
   ],
   close: [
     'These measurements make portability testable rather than assumed.',
@@ -108,7 +108,7 @@ export const VALIDATION = {
     "The current conformance work tests observable behavior through an implementation's public interface.",
     'Evidence includes multiple agent runtimes, local and MCP dataset boundaries, mutation testing, public-interface isolation, and a code-independent implementation.',
     'The next stage is broader independent implementation and third-party conformance evidence.',
-    'The contract is designed so those implementations can be built and evaluated without permission from the programme.',
+    'The contract is designed so independent implementations can be built and evaluated without permission from the programme.',
   ],
 } as const
 
@@ -139,4 +139,32 @@ export const STATUS = {
     'The programme welcomes independent implementations, conformance results, integrations, technical discussion, and research building on the contract.',
   ],
   call: 'Implement the contract. Run the vectors. Compare the behavior.',
+} as const
+
+// The notice, in two forms. The footer carries the summary; /legal.html carries
+// the terms, and the terms are what govern. Both live here so the summary
+// cannot come to say something the full text does not.
+export const LEGAL = {
+  summary:
+    'Agentic Datasets is an independent research and technical project, unaffiliated with the author’s employer. Nothing on this site represents the employer’s views. Materials are provided as is, without warranty.',
+  ownership:
+    'Site and original code © 2026 Alexander Chernov. Site text is licensed CC BY 4.0. The Agentic Datasets mark is all rights reserved; see the brand notes.',
+  terms: [
+    {
+      title: 'No warranty',
+      body: 'Materials on this site are provided as is, for demonstration and research only. No warranty of any kind, express or implied, including without limitation any warranty of merchantability, fitness for a particular purpose, accuracy, availability or non-infringement. No claim is made that they are complete, correct, reliable or continuously available, and they may change or be withdrawn without notice.',
+    },
+    {
+      title: 'Affiliation',
+      body: 'Agentic Datasets is an independent technical project, unaffiliated with the author’s employer. Nothing on this site represents the employer’s views.',
+    },
+    {
+      title: 'Liability',
+      body: 'Use is entirely at your own risk, and to the fullest extent permitted by law the author accepts no liability or responsibility for any loss or damage whatsoever arising from its use.',
+    },
+    {
+      title: 'Licensing',
+      body: 'Site and original code © 2026 Alexander Chernov. The text of this site is licensed CC BY 4.0. The specification is CC BY 4.0, the vectors are CC0, and the conformance software is Apache-2.0, so anyone can implement the contract without asking. The Agentic Datasets mark is the exception: all rights reserved, because an identifier anyone may modify identifies nothing.',
+    },
+  ],
 } as const

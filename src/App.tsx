@@ -153,10 +153,10 @@ export default function App() {
           <Disclaimer
             ownership={
               <>
-                Site and all original code{' '}
+                Site and original code{' '}
                 <strong style={{ color: 'var(--ink-muted)' }}>&copy; 2026 {ORG.maintainer}</strong>.
-                The text of this site is licensed CC BY 4.0; the mark is covered by neither and is
-                all rights reserved &mdash; see the <a href={MARK.href}>brand notes</a>.
+                Site text is licensed CC BY 4.0. The Agentic Datasets mark is all rights reserved;
+                see the <a href={MARK.href}>brand notes</a>.
               </>
             }
           />
