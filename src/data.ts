@@ -21,8 +21,13 @@ export const ORG = {
   orcidLabel: '0009-0007-3198-2712',
 } as const
 
+// Vision and Qubit are named by their own page titles and linked at their live
+// addresses: their sources are not in this organization, so there is no
+// repository to point at.
 export const NAV = [
   { label: 'Explore the showcases', href: '/showcase/' },
+  { label: 'Explore Agentic Vision', href: 'https://vision.agenticdatasets.org/' },
+  { label: 'Explore Agentic Qubit', href: 'https://qubit.agenticdatasets.org/' },
   { label: 'Read the specification', href: '/reference/' },
   { label: 'View the repositories', href: 'https://github.com/agentic-datasets' },
 ] as const

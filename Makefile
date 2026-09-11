@@ -44,6 +44,7 @@ RSYNC_FLAGS := -az --delete --chmod=D755,F644 --exclude .git --exclude .keep
 RSYNC_FLAGS += --exclude /showcase     # agentic-datasets/showcase
 RSYNC_FLAGS += --exclude /reference    # agentic-datasets/reference
 RSYNC_FLAGS += --exclude /vision       # the Agentic Vision site
+RSYNC_FLAGS += --exclude /qubit        # the Agentic Qubit site
 
 .PHONY: deploy deploy-dry
 
