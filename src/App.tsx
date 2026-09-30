@@ -5,6 +5,7 @@ import Disclaimer from './components/Disclaimer'
 import {
   ORG,
   DEFINITION,
+  MANIFESTO,
   CONTRACT,
   MEASURED,
   ARTIFACTS,
@@ -48,7 +49,40 @@ export default function App() {
         ))}
       </Section>
 
-      <Section id="contract" heading={CONTRACT.heading}>
+      <Section id="manifesto" heading={MANIFESTO.heading}>
+        <p className="text-xl font-medium leading-relaxed">{MANIFESTO.lead}</p>
+        <ol className="mt-8 space-y-6 border-t pt-8" style={rule}>
+          {MANIFESTO.points.map((m, i) => (
+            <li key={m.title} className="flex gap-4">
+              <span className="w-6 shrink-0 font-mono tabular-nums" style={faint}>
+                {i + 1}
+              </span>
+              <div>
+                <p className="font-medium leading-relaxed">{m.title}</p>
+                <p className="mt-1 leading-relaxed" style={muted}>
+                  {m.body}
+                </p>
+                {m.asserts && (
+                  <p className="mt-1 font-mono text-xs" style={faint}>
+                    {m.asserts}
+                  </p>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+        <div className="mt-10 border-t pt-6" style={rule}>
+          <p className="text-lg font-medium leading-relaxed">{MANIFESTO.close[0]}</p>
+          <p className="mt-3 leading-relaxed" style={muted}>
+            {MANIFESTO.close[1]}
+          </p>
+          <p className="mt-6 text-sm" style={faint}>
+            {MANIFESTO.trace} <a href={MANIFESTO.source}>Source</a>
+          </p>
+        </div>
+      </Section>
+
+      <Section id="contract" heading={CONTRACT.heading} alt>
         <p className="text-xl font-medium leading-relaxed">{CONTRACT.lead}</p>
         {CONTRACT.body.map((p) => (
           <p key={p} className="mt-4 leading-relaxed" style={muted}>
@@ -57,7 +91,7 @@ export default function App() {
         ))}
       </Section>
 
-      <Section id="measured" heading={MEASURED.heading} alt>
+      <Section id="measured" heading={MEASURED.heading}>
         <dl className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           {MEASURED.figures.map((m) => (
             <div key={m.label}>
@@ -77,7 +111,7 @@ export default function App() {
         </div>
       </Section>
 
-      <Section id="artifacts" heading={ARTIFACTS.heading}>
+      <Section id="artifacts" heading={ARTIFACTS.heading} alt>
         <p className="mb-8 leading-relaxed" style={muted}>
           {ARTIFACTS.lead}
         </p>
@@ -98,7 +132,7 @@ export default function App() {
         </p>
       </Section>
 
-      <Section id="validation" heading={VALIDATION.heading} alt>
+      <Section id="validation" heading={VALIDATION.heading}>
         {VALIDATION.body.map((p) => (
           <p key={p} className="mb-4 leading-relaxed last:mb-0" style={muted}>
             {p}
@@ -106,7 +140,7 @@ export default function App() {
         ))}
       </Section>
 
-      <Section id="organization" heading={PROGRAMME.heading}>
+      <Section id="organization" heading={PROGRAMME.heading} alt>
         {PROGRAMME.body.map((p) => (
           <p key={p} className="mb-4 leading-relaxed last:mb-0" style={muted}>
             {p}
@@ -114,7 +148,7 @@ export default function App() {
         ))}
       </Section>
 
-      <Section id="mark" heading={MARK.heading} alt>
+      <Section id="mark" heading={MARK.heading}>
         <div className="flex items-start gap-8">
           <Mark size={88} className="mt-1 hidden shrink-0 sm:block" />
           <div>
@@ -127,7 +161,7 @@ export default function App() {
         </div>
       </Section>
 
-      <Section id="status" heading={STATUS.heading}>
+      <Section id="status" heading={STATUS.heading} alt>
         <p className="text-xl font-medium leading-relaxed">{STATUS.lead}</p>
         {STATUS.body.map((p) => (
           <p key={p} className="mt-4 leading-relaxed" style={muted}>

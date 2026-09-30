@@ -25,6 +25,7 @@ export const ORG = {
 // addresses: their sources are not in this organization, so there is no
 // repository to point at.
 export const NAV = [
+  { label: 'Read the manifesto', href: '#manifesto' },
   { label: 'Explore the showcases', href: '/showcase/' },
   { label: 'Explore Agentic Vision', href: 'https://vision.agenticdatasets.org/' },
   { label: 'Explore Agentic Qubit', href: 'https://qubit.agenticdatasets.org/' },
@@ -53,6 +54,63 @@ export const DEFINITION = {
     'Each outcome is attributable to the descriptor evidence that produced it.',
     'The result is a dataset interface that participates directly in governed agentic execution.',
   ],
+} as const
+
+// The manifesto is the maintainer's, approved as written 2026-09-29. Its source is
+// `programme/MANIFESTO.md`; keep the two identical. Each point names the
+// assertions in `reference/CONFORMANCE.md` that it restates, so every line
+// traces to the contract rather than adding to it.
+export const MANIFESTO = {
+  heading: 'Manifesto: what makes a dataset agentic',
+  lead: 'A data system is an agentic dataset when these can be found in its implementation, not just in its documentation.',
+  points: [
+    {
+      title: 'It describes itself.',
+      body: "A machine-readable descriptor states the dataset's identity, capabilities and prohibitions. A dataset without a well-formed descriptor takes no part in admission.",
+      asserts: 'AD-001',
+    },
+    {
+      title: 'Only what it advertises can run.',
+      body: 'Every executable action is a registered capability; an unregistered one is denied, never allowed by default.',
+      asserts: 'AD-002, AD-006',
+    },
+    {
+      title: 'It decides before anything runs.',
+      body: 'A control plane rules on each requested action before it executes: Approved, Refused or Indeterminate, each with a typed reason.',
+      asserts: '',
+    },
+    {
+      title: 'Only approval grants authority.',
+      body: 'Execution requires an approval token, and only Approved mints one. After a refusal, or an unknown, there is nothing to execute with.',
+      asserts: 'AD-003, AD-004, AD-005',
+    },
+    {
+      title: 'Scope never widens.',
+      body: 'What was admitted is what runs: no wider at execution, through a cache, through a remote tool server, or in a handoff to another agent.',
+      asserts: 'AD-007, AD-008, AD-013, AD-014',
+    },
+    {
+      title: 'Every decision leaves evidence.',
+      body: 'Every decision gets an append-only, hash-chained record, refusals included. It names the descriptor clause, the dataset revision and the policy version that applied, and every result traces to what produced it.',
+      asserts: 'AD-009 to AD-012',
+    },
+    {
+      title: 'Prohibited means never.',
+      body: 'A prohibited action executes zero times, not rarely.',
+      asserts: 'AD-015',
+    },
+    {
+      title: 'It is checked by behavior, not wording.',
+      body: 'Each point above is checked through the public interface, without an LLM, by the absence of authority rather than the wording of a refusal. That means any implementation, in any framework, is checked the same way.',
+      asserts: '',
+    },
+  ],
+  close: [
+    'Refusal is not a message.',
+    'Meeting these points is a claim an implementation makes about itself, made checkable. It is not a security guarantee.',
+  ],
+  trace: 'The assertions cited are those of the behavioral contract, and its language-neutral vectors check them.',
+  source: 'https://github.com/agentic-datasets/programme/blob/main/MANIFESTO.md',
 } as const
 
 export const CONTRACT = {
