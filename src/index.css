@@ -110,3 +110,46 @@
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Hero navigation: the project's ways in, as buttons. Ink and ground only. */
+@layer components {
+  .hero-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.6rem 0.95rem;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    background: var(--ground);
+    color: var(--ink);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 120ms ease, color 120ms ease;
+  }
+  .hero-link:hover {
+    background: var(--ink);
+    color: var(--ground);
+  }
+  .hero-link-primary {
+    background: var(--ink);
+    color: var(--ground);
+  }
+  .hero-link-primary:hover {
+    background: var(--ground);
+    color: var(--ink);
+  }
+  .hero-link-arrow {
+    font-size: 0.8rem;
+    opacity: 0.7;
+  }
+  /* On a phone the buttons stack, full width, arrows aligned at the edge. */
+  @media (max-width: 639px) {
+    .hero-link {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+

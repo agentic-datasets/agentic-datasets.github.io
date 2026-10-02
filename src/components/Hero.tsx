@@ -17,12 +17,26 @@ export default function Hero() {
       <p className="mt-4 text-sm leading-relaxed" style={{ color: 'var(--ink-faint)' }}>
         {ORG.subline}
       </p>
-      <nav className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-        {NAV.map((n) => (
-          <a key={n.href} href={n.href}>
-            {n.label}
-          </a>
-        ))}
+      {/* Buttons rather than inline links, so the ways into the project read as
+          actions and not as body text. Monochrome like the mark: the first entry
+          is filled, the rest are outlined, and hover inverts. The arrow says
+          where a link goes: within this site, or out to another one. */}
+      <nav aria-label="Explore Agentic Datasets" className="mt-9 flex flex-wrap gap-2.5">
+        {NAV.map((n, i) => {
+          const external = n.href.startsWith('http')
+          return (
+            <a
+              key={n.href}
+              href={n.href}
+              className={`hero-link${i === 0 ? ' hero-link-primary' : ''}`}
+            >
+              <span>{n.label}</span>
+              <span aria-hidden="true" className="hero-link-arrow">
+                {external ? '↗' : '→'}
+              </span>
+            </a>
+          )
+        })}
       </nav>
     </header>
   )
