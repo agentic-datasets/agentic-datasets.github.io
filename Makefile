@@ -45,6 +45,7 @@ RSYNC_FLAGS += --exclude /showcase     # agentic-datasets/showcase
 RSYNC_FLAGS += --exclude /reference    # agentic-datasets/reference
 RSYNC_FLAGS += --exclude /vision       # the Agentic Vision site
 RSYNC_FLAGS += --exclude /qubit        # the Agentic Qubit site
+RSYNC_FLAGS += --exclude /spectra      # the Agentic Spectra site
 
 .PHONY: deploy deploy-dry
 

@@ -28,7 +28,7 @@ export const NAV = [
   { label: 'Read the manifesto', href: '#manifesto' },
   { label: 'Explore the showcases', href: '/showcase/' },
   { label: 'Explore Agentic Vision', href: 'https://vision.agenticdatasets.org/' },
-  { label: 'Explore Agentic Spectra', href: 'https://agenticspectra.ca/' },
+  { label: 'Explore Agentic Spectra', href: 'https://spectra.agenticdatasets.org/' },
   { label: 'Explore Agentic Qubit', href: 'https://qubit.agenticdatasets.org/' },
   { label: 'Read the specification', href: '/reference/' },
   { label: 'View the repositories', href: 'https://github.com/agentic-datasets' },
